@@ -1,4 +1,2 @@
-######################
-## EPiServer Files
-######################
-*License.config
+node_modules
+src/tailwind-project/dist/
