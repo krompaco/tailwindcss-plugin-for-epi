@@ -1,4 +1,4 @@
-﻿@{
+@{
 	Layout = null;
 }
 <!DOCTYPE html>
@@ -7,19 +7,162 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Example Plugin</title>
-	<link rel="stylesheet" href="/Static/css/tailwindcss-plugin-for-epi.css" />
+	<link rel="stylesheet" href="/static/css/tailwindcss-plugin-for-epi.css" />
 </head>
 <body class="font-sans text-copy bg-admin">
 	<div class="m-4">
 		<h1 class="text-xl mb-3 border-b border-line pb-1">Example Tailwind CSS Plugin</h1>
-		<h2 class="text-lg mb-3">Just a sample view</h2>
-		<p class="mb-3 text-sm font-proxima">This is just a sample paragraph with <a href="#link1" class="text-primary-3 underline">a really cool hyperlink</a> and I think the spacing and sizing is somewhat correct.</p>
-		<ul class="list-disc pl-4 text-sm font-proxima mb-3">
+
+		<h2 class="text-lg mb-3">Sample typography</h2>
+		<p class="mb-3 text-sm font-proxima">This is just a sample paragraph with <a href="#link1" class="text-primary underline">a really cool hyperlink</a> and I think the spacing and sizing is somewhat correct.</p>
+		<ul class="list-disc pl-4 text-sm font-proxima mb-5">
 			<li>It gives you a lot of control.</li>
 			<li>You can use your existing CSS skills.</li>
 		</ul>
-		@* TODO: Add forms and stuff *@
+
+		<h2 class="text-lg mb-3">Some button examples</h2>
+		<div class="mb-3">
+			<input type="button" value="Input Button" class="mb-1 border-2 border-primary bg-primary text-white px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-white" />
+			<button class="mb-1 border-2 border-primary bg-primary text-white px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-white">Button Element</button>
+			<a href="#link2" class="mb-1 inline-block border-2 border-primary bg-primary text-white px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-white">Publish Changes</a>
+			<a href="#link3" class="mb-1 inline-block border-2 border-danger bg-danger text-white px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-white">Delete Item</a>
+			<a href="#link4" class="mb-1 inline-block border-2 border-surface-dark bg-surface-dark text-black px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-black">Click Me</a>
+		</div>
+		<div class="mb-5">
+			<input type="button" value="Input Button" class="mb-1 border-2 border-primary bg-primary text-white px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-white" />
+			<button class="mb-1 border-2 border-primary bg-primary text-white px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-white">Button Element</button>
+			<a href="#link5" class="mb-1 inline-block border-2 border-primary bg-primary text-white px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-white">Publish Changes</a>
+			<a href="#link6" class="mb-1 inline-block border-2 border-danger bg-danger text-white px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-white">Delete Item</a>
+			<a href="#link7" class="mb-1 inline-block border-2 border-surface-dark bg-surface-dark text-black px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-black">Click Me</a>
+		</div>
+
+		<h2 class="text-lg mb-3">Testing a form</h2>
+		<form method="get" action="." class="w-1/3 max-w-2xl bg-surface-dark p-4 border border-line rounded-sm mb-5">
+			<div role="alert" class="mb-6">
+				<div class="bg-danger text-white font-bold text-sm font-proxima rounded-sm px-4 py-2">
+					Some types of errors
+				</div>
+				<div class="border border-t-0 border-danger rounded-b px-4 py-3">
+					<ul class="list-disc pl-4 text-sm font-proxima">
+						<li>One is about something.</li>
+						<li>The other is about an other thing.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="md:flex md:items-center mb-4">
+				<div class="md:w-1/5">
+					<label class="text-sm block mb-1 md:mb-0 pr-4" for="full-name">
+						Full name
+					</label>
+				</div>
+				<div class="md:w-4/5">
+					<input class="text-sm border-2 rounded-sm w-full py-2 px-3 leading-tight hover:border-black focus:border-primary" id="full-name" type="text" placeholder="Full name">
+				</div>
+			</div>
+			<div class="md:flex md:items-center mb-4">
+				<div class="md:w-1/5">
+					<label class="text-sm block mb-1 md:mb-0 pr-4" for="address">
+						Address
+					</label>
+				</div>
+				<div class="md:w-4/5">
+					<input class="text-sm border-2 rounded-sm w-full py-2 px-3 leading-tight hover:border-black focus:border-primary" id="address" type="text" placeholder="Address">
+				</div>
+			</div>
+			<div class="text-right">
+				<input type="submit" value="Submit Form" class="border-2 border-primary bg-primary text-white px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-white" />
+			</div>
+		</form>
+
+		<h2 class="text-lg mb-3">Search form and results table</h2>
+
+		<form method="get" action="." class="max-w-xs mb-3">
+			<div class="md:flex md:items-center mb-4">
+				<div class="mb-4 mr-2 md:w-2/3 md:mb-0">
+					<label class="hidden" for="q">Search phrase</label>
+					<input class="text-xs border-2 rounded-sm w-full py-2 px-3 leading-tight hover:border-black focus:border-primary" id="q" type="text" placeholder="Search phrase">
+				</div>
+				<div class="md:w-1/3">
+					<input type="submit" value="Search" class="border-2 border-surface-dark bg-surface-dark text-black px-4 py-2 font-sans text-xs rounded-sm outline-none leading-tight border-dotted focus:border-black" />
+				</div>
+			</div>
+		</form>
+
+		@{
+			var thRules = "bg-surface-dark font-proxima text-left border-0 border-line border-b border-solid p-4 border-t-4 font-normal";
+			var tdRules = "text-sm font-serif border-0 border-line border-b border-solid p-4";
+			var buttonRules = "text-xs inline-block border-2 border-primary bg-primary text-white px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-white";
+		}
+
+		<table class="w-2/4 max-w-3xl">
+			<caption class="text-right pb-2 text-xs font-proxima">Items found: 3</caption>
+			<thead>
+				<tr>
+					<th class="@thRules">Name</th>
+					<th class="@thRules">Address</th>
+					<th class="@thRules">Submitted</th>
+					<th class="@thRules text-right"><span class="hidden">Actions</span></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="@tdRules">Johan Kronberg</td>
+					<td class="@tdRules">South Side 77</td>
+					<td class="@tdRules">2019-10-01 22:03</td>
+					<td class="@tdRules text-right">
+						<a href="#link8" class="@buttonRules">Edit</a>
+					</td>
+				</tr>
+				<tr class="bg-primary-light">
+					<td class="@tdRules">Sven Svensson</td>
+					<td class="@tdRules">44 Test Street</td>
+					<td class="@tdRules">2019-10-01 22:03</td>
+					<td class="@tdRules text-right">
+						<a href="#link9" class="@buttonRules">Edit</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="@tdRules">Thomas Thomasson</td>
+					<td class="@tdRules">Not sure what street but number was 11</td>
+					<td class="@tdRules">2019-10-01 22:03</td>
+					<td class="@tdRules text-right">
+						<a href="#link10" class="@buttonRules">Edit</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
+	@*Show a spinner on navigation and submit*@
+	@*<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var spinner = document.getElementById('spinner');
+
+			document.body.addEventListener('submit', function (e) {
+				e.preventDefault();
+
+				console.log(e.target);
+				spinner.style.visibility = 'visible';
+
+				setTimeout(function () { e.target.submit() }, 500);
+			}, true);
+			document.addEventListener('click', function (e) {
+				// If the clicked element doesn't have the right selector, bail
+				if (!e.target.matches('a')) {
+					return;
+				}
+
+				// Don't follow the link
+				e.preventDefault();
+
+				// Log the clicked element in the console
+				console.log(e.target);
+				spinner.style.visibility = 'visible';
+
+				setTimeout(function () { e.target.submit() }, 500);
+			}, false);
+
+		});
+	</script>*@
 </body>
 </html>
 

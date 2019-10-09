@@ -7,12 +7,12 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				'primary-1': '#f0f0f2',
-				'primary-2': '#d4e0fd',
-				'primary-3': '#1456f1',
-				'surface-1': '#ffffff',
-				'surface-2': '#fafafa',
-				'surface-3': '#dedede',
+				// Interpretation of http://ux.episerver.com/#colors
+				'primary': '#1456f1',
+				'primary-light': '#f0f0f2',
+				'primary-dark': '#d4e0fd',
+				'surface-light': '#fafafa',
+				'surface-dark': '#dedede',
 				'admin': '#fbfbfb',
 				'line': '#bebebe',
 				'copy': '#01062b',
@@ -21,7 +21,8 @@ module.exports = {
 				'success': '#81c784',
 				'info': '#fff176',
 				'warning': '#ffb74d',
-				'danger': '#e57373',
+				'danger': '#F44336',
+				'navigation': '#040a47',
 			}
 		},
 	},
