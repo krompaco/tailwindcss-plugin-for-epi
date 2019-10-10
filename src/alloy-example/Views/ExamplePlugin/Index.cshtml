@@ -20,22 +20,6 @@
 			<li>You can use your existing CSS skills.</li>
 		</ul>
 
-		<h2 class="text-lg mb-3">Some button examples</h2>
-		<div class="mb-3">
-			<input type="button" value="Input Button" class="epi-primary mb-1 text-xs" />
-			<button class="epi-primary mb-1 text-xs">Button Element</button>
-			<a href="?test2" class="epi-primary mb-1 text-xs">Publish Changes</a>
-			<a href="?test3" class="epi-danger mb-1 text-xs">Delete Item</a>
-			<a href="?test4" class="epi-flat mb-1 text-xs">Click Me</a>
-		</div>
-		<div class="mb-5">
-			<input type="button" value="Input Button" class="epi-primary mb-1 text-sm" />
-			<button class="epi-primary mb-1 text-sm">Button Element</button>
-			<a href="?test5" class="epi-primary mb-1 text-sm">Publish Changes</a>
-			<a href="?test6" class="epi-danger mb-1 text-sm">Delete Item</a>
-			<a href="?test7" class="epi-flat mb-1 text-sm">Click Me</a>
-		</div>
-
 		<h2 class="text-lg mb-3">Testing a form</h2>
 
 		@{
@@ -100,7 +84,7 @@
 			var buttonRules = "epi-primary text-xs";
 		}
 
-		<table class="max-w-full md:w-2/4 md:max-w-3xl">
+		<table class="max-w-full md:w-2/4 md:max-w-3xl mb-5">
 			<caption class="text-right pb-2 text-xs font-proxima">Items found: 3</caption>
 			<thead>
 				<tr>
@@ -137,7 +121,24 @@
 				</tr>
 			</tbody>
 		</table>
+
+		<h2 class="text-lg mb-3">Some button examples</h2>
+		<div class="mb-3">
+			<input type="button" value="Input Button" class="epi-primary mb-1 text-xs" />
+			<button class="epi-primary mb-1 text-xs">Button Element</button>
+			<a href="?test2" class="epi-primary mb-1 text-xs">Publish Changes</a>
+			<a href="?test3" class="epi-danger mb-1 text-xs">Delete Item</a>
+			<a href="?test4" class="epi-flat mb-1 text-xs">Click Me</a>
+		</div>
+		<div class="mb-5">
+			<input type="button" value="Input Button" class="epi-primary mb-1 text-sm" />
+			<button class="epi-primary mb-1 text-sm">Button Element</button>
+			<a href="?test5" class="epi-primary mb-1 text-sm">Publish Changes</a>
+			<a href="?test6" class="epi-danger mb-1 text-sm">Delete Item</a>
+			<a href="?test7" class="epi-flat mb-1 text-sm">Click Me</a>
+		</div>
 	</div>
+
 	@* Show a spinner on navigation and submit *@
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
