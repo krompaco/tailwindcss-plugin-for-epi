@@ -10,11 +10,11 @@
 	<link rel="stylesheet" href="/static/css/tailwindcss-plugin-for-epi.css" />
 </head>
 <body class="font-sans text-copy bg-admin">
-	<div class="m-4">
+	<div class="m-4" id="js-main">
 		<h1 class="text-xl mb-3 border-b border-line pb-1">Example Tailwind CSS Plugin</h1>
 
 		<h2 class="text-lg mb-3">Sample typography</h2>
-		<p class="mb-3 text-sm font-proxima">This is just a sample paragraph with <a href="#link1" class="text-primary underline">a really cool hyperlink</a> and I think the spacing and sizing is somewhat correct.</p>
+		<p class="mb-3 text-sm font-proxima">This is just a sample paragraph with <a href="?test1" class="text-primary underline">a really cool hyperlink</a> and I think the spacing and sizing is somewhat correct.</p>
 		<ul class="list-disc pl-4 text-sm font-proxima mb-5">
 			<li>It gives you a lot of control.</li>
 			<li>You can use your existing CSS skills.</li>
@@ -22,21 +22,27 @@
 
 		<h2 class="text-lg mb-3">Some button examples</h2>
 		<div class="mb-3">
-			<input type="button" value="Input Button" class="mb-1 border-2 border-primary bg-primary text-white px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-white" />
-			<button class="mb-1 border-2 border-primary bg-primary text-white px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-white">Button Element</button>
-			<a href="#link2" class="mb-1 inline-block border-2 border-primary bg-primary text-white px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-white">Publish Changes</a>
-			<a href="#link3" class="mb-1 inline-block border-2 border-danger bg-danger text-white px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-white">Delete Item</a>
-			<a href="#link4" class="mb-1 inline-block border-2 border-surface-dark bg-surface-dark text-black px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-black">Click Me</a>
+			<input type="button" value="Input Button" class="epi-primary mb-1 text-xs" />
+			<button class="epi-primary mb-1 text-xs">Button Element</button>
+			<a href="?test2" class="epi-primary mb-1 text-xs">Publish Changes</a>
+			<a href="?test3" class="epi-danger mb-1 text-xs">Delete Item</a>
+			<a href="?test4" class="epi-flat mb-1 text-xs">Click Me</a>
 		</div>
 		<div class="mb-5">
-			<input type="button" value="Input Button" class="mb-1 border-2 border-primary bg-primary text-white px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-white" />
-			<button class="mb-1 border-2 border-primary bg-primary text-white px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-white">Button Element</button>
-			<a href="#link5" class="mb-1 inline-block border-2 border-primary bg-primary text-white px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-white">Publish Changes</a>
-			<a href="#link6" class="mb-1 inline-block border-2 border-danger bg-danger text-white px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-white">Delete Item</a>
-			<a href="#link7" class="mb-1 inline-block border-2 border-surface-dark bg-surface-dark text-black px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-black">Click Me</a>
+			<input type="button" value="Input Button" class="epi-primary mb-1 text-sm" />
+			<button class="epi-primary mb-1 text-sm">Button Element</button>
+			<a href="?test5" class="epi-primary mb-1 text-sm">Publish Changes</a>
+			<a href="?test6" class="epi-danger mb-1 text-sm">Delete Item</a>
+			<a href="?test7" class="epi-flat mb-1 text-sm">Click Me</a>
 		</div>
 
 		<h2 class="text-lg mb-3">Testing a form</h2>
+
+		@{
+			var labelRules = "text-sm block mb-1 md:mb-0 pr-4";
+			var inputRules = "text-sm border-2 rounded-sm w-full py-2 px-3 leading-tight hover:border-black focus:border-primary";
+		}
+
 		<form method="get" action="." class="max-w-full md:w-2/4 md:max-w-2xl bg-surface-dark p-4 border border-line rounded-sm mb-5">
 			<div role="alert" class="mb-6">
 				<div class="bg-danger text-white font-bold text-sm font-proxima rounded-sm px-4 py-2">
@@ -51,26 +57,26 @@
 			</div>
 			<div class="md:flex md:items-center mb-4">
 				<div class="md:w-1/5">
-					<label class="text-sm block mb-1 md:mb-0 pr-4" for="full-name">
+					<label class="@labelRules" for="full-name">
 						Full name
 					</label>
 				</div>
 				<div class="md:w-4/5">
-					<input class="text-sm border-2 rounded-sm w-full py-2 px-3 leading-tight hover:border-black focus:border-primary" id="full-name" type="text" placeholder="Full name">
+					<input class="@inputRules" id="full-name" type="text" placeholder="Full name">
 				</div>
 			</div>
 			<div class="md:flex md:items-center mb-4">
 				<div class="md:w-1/5">
-					<label class="text-sm block mb-1 md:mb-0 pr-4" for="address">
+					<label class="@labelRules" for="address">
 						Address
 					</label>
 				</div>
 				<div class="md:w-4/5">
-					<input class="text-sm border-2 rounded-sm w-full py-2 px-3 leading-tight hover:border-black focus:border-primary" id="address" type="text" placeholder="Address">
+					<input class="@inputRules" id="address" type="text" placeholder="Address">
 				</div>
 			</div>
 			<div class="text-right">
-				<input type="submit" value="Submit Form" class="border-2 border-primary bg-primary text-white px-4 py-2 font-sans text-xs rounded-sm outline-none leading-none border-dotted focus:border-white" />
+				<input type="submit" value="Submit Form" class="epi-primary text-sm" />
 			</div>
 		</form>
 
@@ -80,10 +86,10 @@
 			<div class="md:flex md:items-center mb-4">
 				<div class="mb-4 mr-2 md:w-2/3 md:mb-0">
 					<label class="hidden" for="q">Search phrase</label>
-					<input class="text-xs border-2 rounded-sm w-full py-2 px-3 leading-tight hover:border-black focus:border-primary" id="q" type="text" placeholder="Search phrase">
+					<input class="text-xs border-2 rounded-sm w-full py-2 px-3 leading-none hover:border-black focus:border-primary" id="q" type="text" placeholder="Search phrase">
 				</div>
 				<div class="md:w-1/3">
-					<input type="submit" value="Search" class="border-2 border-surface-dark bg-surface-dark text-black px-4 py-2 font-sans text-xs rounded-sm outline-none leading-tight border-dotted focus:border-black" />
+					<input type="submit" value="Search" class="epi-flat text-xs" />
 				</div>
 			</div>
 		</form>
@@ -91,7 +97,7 @@
 		@{
 			var thRules = "bg-surface-dark font-proxima text-left border-0 border-line border-b border-solid p-4 border-t-4 font-normal";
 			var tdRules = "text-sm font-serif border-0 border-line border-b border-solid p-4";
-			var buttonRules = "text-xs inline-block border-2 border-primary bg-primary text-white px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted focus:border-white";
+			var buttonRules = "epi-primary text-xs";
 		}
 
 		<table class="max-w-full md:w-2/4 md:max-w-3xl">
@@ -110,7 +116,7 @@
 					<td class="@tdRules">South Side 77</td>
 					<td class="@tdRules">2019-10-01 22:03</td>
 					<td class="@tdRules text-right">
-						<a href="#link8" class="@buttonRules">Edit</a>
+						<a href="?test8" class="@buttonRules">Edit</a>
 					</td>
 				</tr>
 				<tr class="bg-primary-light">
@@ -118,7 +124,7 @@
 					<td class="@tdRules">44 Test Street</td>
 					<td class="@tdRules">2019-10-01 22:03</td>
 					<td class="@tdRules text-right">
-						<a href="#link9" class="@buttonRules">Edit</a>
+						<a href="?test9" class="@buttonRules">Edit</a>
 					</td>
 				</tr>
 				<tr>
@@ -126,43 +132,45 @@
 					<td class="@tdRules">Not sure what street but number was 11</td>
 					<td class="@tdRules">2019-10-01 22:03</td>
 					<td class="@tdRules text-right">
-						<a href="#link10" class="@buttonRules">Edit</a>
+						<a href="?test10" class="@buttonRules">Edit</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	@*Show a spinner on navigation and submit*@
-	@*<script>
+	@* Show a spinner on navigation and submit *@
+	<script>
 		document.addEventListener('DOMContentLoaded', function () {
+			var target = document.querySelector('#js-main');
+			var div = document.createElement('div');
+			div.id = "spinner";
+			div.className = 'loading';
+			div.style.display = 'none';
+			div.style.visibility = 'hidden';
+			div.innerHTML = 'Loading...';
+			target.parentNode.insertBefore(div, target);
+
 			var spinner = document.getElementById('spinner');
 
 			document.body.addEventListener('submit', function (e) {
 				e.preventDefault();
-
-				console.log(e.target);
+				spinner.style.display = 'block';
 				spinner.style.visibility = 'visible';
-
 				setTimeout(function () { e.target.submit() }, 500);
-			}, true);
+			}, false);
+
 			document.addEventListener('click', function (e) {
-				// If the clicked element doesn't have the right selector, bail
 				if (!e.target.matches('a')) {
 					return;
 				}
 
-				// Don't follow the link
 				e.preventDefault();
-
-				// Log the clicked element in the console
-				console.log(e.target);
+				spinner.style.display = 'block';
 				spinner.style.visibility = 'visible';
-
-				setTimeout(function () { e.target.submit() }, 500);
+				setTimeout(function () { document.location.href = e.target.href }, 500);
 			}, false);
-
 		});
-	</script>*@
+	</script>
 </body>
 </html>
 

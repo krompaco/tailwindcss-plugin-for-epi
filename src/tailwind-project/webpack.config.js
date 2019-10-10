@@ -1,6 +1,7 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WriteFileWebpackPlugin = require('write-file-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
 	entry: './src/tailwindcss-plugin-for-epi.css',
@@ -9,26 +10,41 @@ module.exports = {
 		rules: [
 			{
 				test: /\.css$/,
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: [
-						{ loader: 'css-loader', options: { importLoaders: 1 } },
-						'postcss-loader'
-					]
-				})
-			},
-			{ test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: '../',
+							hmr: process.env.NODE_ENV === 'development',
+						},
+					},
+					'css-loader',
+					'postcss-loader',
+				],
+			  },
+			{
+				test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+				loader: 'url-loader?limit=100000'
+			}
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin('tailwindcss-plugin-for-epi.css', {
-			disable: process.env.NODE_ENV === 'development'
+		new MiniCssExtractPlugin({
+			filename: 'tailwindcss-plugin-for-epi.css',
+			chunkFilename: 'tailwindcss-plugin-for-epi.css',
+		}),
+		new OptimizeCssAssetsPlugin({
+			assetNameRegExp: /\.css$/g,
+			cssProcessor: require('cssnano'),
+			cssProcessorPluginOptions: {
+			  preset: ['default', { discardComments: { removeAll: true } }],
+			},
+			canPrint: true
 		}),
 		new WriteFileWebpackPlugin({
 			// Write only files that have ".css" extension.
 			test: /\.css$/,
 			useHashIndex: true
 		}),
-		
 	]
 };
