@@ -19,7 +19,20 @@ Go to `src\tailwind-project` and do a `npm install`, then start by running `npm 
 
 It will watch files and build a new CSS-file to the `dist` folder on every update.
 
-## Thank you
+To make it faster to see what you're doing and get files in the correct place when contributing one way is to add some build event commands.
+
+### Example pre-build command
+
+    xcopy /y C:\Projects\tailwindcss-plugin-for-epi\src\tailwind-project\dist\tailwindcss-plugin-for-epi.css $(ProjectDir)Static\css
+
+### Example post-build commands
+
+    xcopy /y $(ProjectDir)Controllers\ExamplePluginController.cs  C:\Projects\tailwindcss-plugin-for-epi\src\alloy-example\Controllers
+    xcopy /y $(ProjectDir)Views\ExamplePlugin\Index.cshtml  C:\Projects\tailwindcss-plugin-for-epi\src\alloy-example\Views\ExamplePlugin
+    xcopy /y $(ProjectDir)Global.asax.cs C:\Projects\tailwindcss-plugin-for-epi\src\alloy-example
+    xcopy /y $(ProjectDir)Static\css\tailwindcss-plugin-for-epi.css C:\Projects\tailwindcss-plugin-for-epi\src\alloy-example\Static\css
+
+## Thank you!
 
 * http://ux.episerver.com/
 * https://tailwindcss.com/
