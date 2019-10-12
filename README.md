@@ -19,7 +19,7 @@ Go to `src\tailwind-project` and do a `npm install`, then start by running `npm 
 
 It will watch files and build a new CSS-file to the `dist` folder on every update.
 
-I usually have `src\tailwind-project` opened in VS Code and have a typical Alloy site Solution in VS. To make it faster to see what you're doing and get files in the correct place when contributing or modifying one way is to add some build event commands.
+I usually have `src\tailwind-project` opened in VS Code and a typical Alloy solution in VS. To make it faster to see what I'm doing and get files in the correct place when contributing or modifying one way is to add some build event commands.
 
 ### Example pre-build command
 
