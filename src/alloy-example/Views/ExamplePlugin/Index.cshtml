@@ -23,11 +23,11 @@
 		<h2 class="text-lg mb-3">Testing a form</h2>
 
 		@{
-			var labelRules = "text-sm block mb-1 md:mb-0 pr-4";
+			var labelRules = "text-sm block mb-1 md:mb-0";
 			var inputRules = "text-sm border-2 rounded-sm w-full py-2 px-3 leading-tight hover:border-black focus:border-primary";
 		}
 
-		<form method="get" action="." class="max-w-full md:w-2/4 md:max-w-2xl bg-surface-dark p-4 border border-line rounded-sm mb-5">
+		<form method="get" action="." class="w-full md:w-1/2 xl:w-1/4 bg-surface-dark p-4 border border-line rounded-sm mb-5">
 			<div role="alert" class="mb-6">
 				<div class="bg-danger text-white font-bold text-sm font-proxima rounded-sm px-4 py-2">
 					Some types of errors
@@ -84,7 +84,7 @@
 			var buttonRules = "epi-primary text-xs";
 		}
 
-		<table class="max-w-full md:w-2/4 md:max-w-3xl mb-5">
+		<table class="table max-w-full mb-5">
 			<caption class="text-right pb-2 text-xs font-proxima">Items found: 3</caption>
 			<thead>
 				<tr>
