@@ -12,7 +12,7 @@ There is also a spinner in there to clarify when things are loading inside the A
 ![Screenshot spinner](https://raw.githubusercontent.com/krompaco/tailwindcss-plugin-for-epi/master/docs/screenshot-spinner.png)
 
 ## Installation
-Just copy the files from `src\alloy-example` into a recent Alloy project. Or just look at them and copy what you need. At minimum you will want to copy and link the minified CSS file from the `dist` folder and the go create Tailwind CSS style.
+Just copy the files from `src\alloy-example` into a recent Alloy project. Or just look at them and copy what you need. At minimum you will want to copy and link the minified CSS file from the `dist` folder and start creating.
 
 ## Contributing or building new CSS
 Go to `src\tailwind-project` and do a `npm install`, then start by running `npm run dev`.
