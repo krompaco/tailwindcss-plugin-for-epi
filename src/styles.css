@@ -2,6 +2,33 @@
 
 @tailwind components;
 
+.iframe-wrapper {
+	position: relative;
+	overflow: hidden;
+	padding-top: 56.25%;
+}
+.iframe-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.table-wrapper {
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+.prose a, .default-link {
+	@apply underline text-blue-700 hover:bg-yellow-200 hover:text-gray-900 hover:no-underline focus:bg-yellow-200 focus:text-gray-900 focus:no-underline;
+}
+
+.prose pre, .prose pre code {
+	font-size: 12px !important;
+	line-height: 16px !important;
+}
+
 /* Some extracted components */
 .epi-primary {
 	@apply inline-block border-2 border-primary bg-primary text-white px-4 py-2 font-sans rounded-sm outline-none leading-none border-dotted cursor-pointer;
